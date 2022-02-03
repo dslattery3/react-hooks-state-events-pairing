@@ -1,14 +1,8 @@
 import React, {useState} from 'react';
 
-function Header({props, handleComments, commentsOn}) {
+function Header({props, handleComments, commentsOn, handleUpVotes, handleDownVotes, upVotes, downVotes}) {
     console.log(props)
     
-    const [upVotes, setUpVotes] = useState(props.upvotes)
-    const [downVotes, setdownVotes] = useState(props.downvotes)
-
-    function handleUpVotes(){setUpVotes(upVotes+1)}
-    function handleDownVotes(){setdownVotes(downVotes+1)}
-
     return (
     <header>
         <h1>{props.title}</h1>

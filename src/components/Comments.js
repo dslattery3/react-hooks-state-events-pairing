@@ -1,11 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 
-function Comments({comments, commentsOn, handleComments}) {
-    const displayedComments = comments.map((comment) => <div key={comment.id}>
+function Comments({comments}) {
+
+  
+    const displayedComments = comments.map((comment) =>  {const [upVotes, setUpVotes] = useState(comment.upvotes)
+    const [downVotes, setdownVotes] = useState(comment.downvotes)
+    return (
+    <div key={comment.id}>
         <h3>{comment.user}</h3>
         <p>{comment.comment}</p>
-    </div>)
+        <button onClick={handleUpVotes}>{upVotes} 👍</button>
+    </div>)}
+
     const commentCount = comments.length
+    
+    
+    function handleUpVotes(){setUpVotes(upVotes+1)}
+    // function handleDownVotes(){setdownVotes(downVotes+1)}
+
+
 
     return(
         <>
@@ -13,6 +26,7 @@ function Comments({comments, commentsOn, handleComments}) {
             <div id='comment-container'>
                 {displayedComments}
             </div>
+            
         </>);
 }
 
