@@ -1,4 +1,6 @@
 import video from "../data/video.js";
+import React, {useState} from "react";
+import Header from "./Header.js";
 
 function App() {
   console.log("Here's your data:", video);
@@ -8,11 +10,13 @@ function App() {
       <iframe
         width="919"
         height="525"
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        src="https://www.youtube.com/embed/dpw9EHDh2bM"
         frameBorder="0"
         allowFullScreen
-        title="Thinking in React"
+        title="React Today and Tomorrow and 90% Cleaner React With Hooks"
       />
+
+      <Header props={video} />
     </div>
   );
 }
