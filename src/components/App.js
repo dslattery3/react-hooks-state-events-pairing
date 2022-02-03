@@ -3,7 +3,7 @@ import React, {useState} from "react";
 import Header from "./Header.js";
 
 function App() {
-  console.log("Here's your data:", video);
+  
 
   return (
     <div className="App">
